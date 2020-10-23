@@ -1,0 +1,1011 @@
+<!-- Toolbar -->
+<div class="container-fluid">
+<div class="toolbar" role="banner">
+  <img
+    width="280"
+    alt="Angular Logo"
+    src="https://muthootenterprises.com/images/logo.png"
+  />
+  
+  <!-- <span>Create Gold Loan</span> -->
+    <div class="spacer"></div>
+    <!-- <a aria-label="Angular on twitter" target="_blank" rel="noopener" href="https://twitter.com/angular" title="Twitter">
+      <svg id="twitter-logo" height="24" data-name="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+        <rect width="400" height="400" fill="none"/>
+        <path d="M153.62,301.59c94.34,0,145.94-78.16,145.94-145.94,0-2.22,0-4.43-.15-6.63A104.36,104.36,0,0,0,325,122.47a102.38,102.38,0,0,1-29.46,8.07,51.47,51.47,0,0,0,22.55-28.37,102.79,102.79,0,0,1-32.57,12.45,51.34,51.34,0,0,0-87.41,46.78A145.62,145.62,0,0,1,92.4,107.81a51.33,51.33,0,0,0,15.88,68.47A50.91,50.91,0,0,1,85,169.86c0,.21,0,.43,0,.65a51.31,51.31,0,0,0,41.15,50.28,51.21,51.21,0,0,1-23.16.88,51.35,51.35,0,0,0,47.92,35.62,102.92,102.92,0,0,1-63.7,22A104.41,104.41,0,0,1,75,278.55a145.21,145.21,0,0,0,78.62,23" fill="#fff"/>
+      </svg>
+    </a> -->
+    <img width="120"  src="https://muthootenterprises.com/images/muthoottm.png"/>
+</div>
+
+<div class="content" role="main">
+
+</div>
+
+
+<form (ngSubmit)="savegoldDetails()">
+  <span class="task bar">&nbsp;Create Gold Loan</span>
+  <div class="taskborder">
+
+    <div class="container-fluid">
+      <div class="row mt-3 mb-3">
+
+        <div class="col-sm-1 pl-3 pr-0">
+          <div class="form-group">
+            <label for="glnumber">GL Number:</label>
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <input type="text" class="form-control" id="glnumber" [(ngModel)]="golddetail.glnumber" name="glnumber">
+          </div>
+        </div>
+
+        <div class="col-sm-1 pl-3 pr-0">
+          <div class="form-group">
+            <label for="currentgoldrate">Current Gold Rate:</label>
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <input type="text" class="form-control" id="currentgoldrate" [(ngModel)]="golddetail.currentgoldrate"
+              name="currentgoldrate">
+          </div>
+        </div>
+
+
+        <div class="col-sm-3 p-0">
+          <div class="form-group">
+
+            <button type="button" class="btn btn-secondary mr-1">Search Customer</button>
+            <button type="button" type="button" (click)="popup = true" class="btn btn-secondary"> Create
+              Customer</button>
+
+          </div>
+
+
+
+        </div>
+        <!-- col-sm3 pl-27 pr-0 -->
+        <div class="col-sm-1 pl-3 pr-0">
+          <div class="form-group">
+            <label for="ccname">Customer Code:</label>
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <input type="number" class="form-control" id="customercode" [(ngModel)]="golddetail.customercode"
+              name="customercode">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row mt0 mb-3">
+
+        <div class="col-sm-1 pl-3 pr-0">
+          <div class="form-group">
+            <label for="cnname">Customer Name:</label>
+
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <input class="form-control" type="text" id="customername" [(ngModel)]="golddetail.customername"
+              name="customername">
+          </div>
+        </div>
+
+        <div class="col-sm-1 pl-3 pr-0">
+          <div class="form-group">
+            <label for="rcname">Repledeger Customer:</label>
+
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <input class="form-control" type="text" id="repledgecustomer" [(ngModel)]="golddetail.repledgecustomer"
+              name="repledgecustomer">
+          </div>
+        </div>
+
+        <div class="col-sm-1 pl-3 pr-0">
+          <div class="form-group">
+            <label for="cnname">Contact No:</label>
+
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <input class="form-control" type="text" id="contactno" [(ngModel)]="golddetail.contactno" name="contactno">
+          </div>
+        </div>
+
+        <div class="col-sm-1 pl-3 pr-0">
+          <div class="form-group">
+            <label for="fname">Email:</label>
+
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <input class="form-control" type="text" id="fname" name="fname" value="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row mt0 mb-3">
+
+        <div class="col-sm-1 pl-3 pr-0">
+          <div class="form-group">
+            <label for="fname">Address:</label>
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <textarea type="text" id="fname" name="fname" value="" class="form-control"></textarea>
+          </div>
+        </div>
+
+        <div class="col-sm-1 pl-3 pr-0">
+          <div class="form-group">
+            <label for="fname"> Pawn Ticket No:</label>
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <input type="text" id="fname" name="fname" value="" class="form-control">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <span class="task bar">&nbsp;Loan Details</span>
+  <div class="taskborder">
+    <div style="margin-top: 23px; text-align:center;">
+      <label for="chooseloan" style="margin-right:5px;">Choose Loan:</label>
+
+      <input type="radio" id="normalloan" name="loantype" value="NormalLoan" style="margin-right:5px;">
+      <label for="normalloan" style="margin-right:5px;">NormalLoan</label>
+
+      <input type="radio" id="emi" name="loantype" value="EMI" style="margin-right:5px;">
+      <label for="emi" style="margin-right:5px;">EMI</label><br>
+    </div><br>
+
+    <div class="container-fluid">
+      <div class="row mt-2 mb-2">
+
+        <div class="col-sm-1 pl-3 pr-0">
+          <div class="form-group">
+            <label for="sname">Scheme Name:</label>
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <input type="text" id="schemename" name="schemename" class="form-control">
+          </div>
+        </div>
+
+        <div class="col-sm-1 pl-3 pr-0">
+          <div class="form-group">
+            <label for="cssname">Current Slab Interest Rate:</label>
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <input type="text" id="currentslabrate" name="csname" value="" class="form-control">
+          </div>
+        </div>
+
+        <div class="col-sm-1 pl-3 pr-0">
+          <div class="form-group">
+            <label for="cssname">Scheme Risk Category:</label>
+          </div>
+        </div>
+
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <input type="text" id="currentslabrate" name="csname" value="" class="form-control">
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <div class="container-fluid">
+      <div class="row mt-2 mb-2">
+
+        <div class="col-sm-1 pl-3 pr-0">
+          <div class="form-group">
+            <label for="fname">Scheme Gold Rate:</label>
+
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <input type="text" id="fname" name="fname" value="" class="form-control">
+          </div>
+        </div>
+
+        <div class="col-sm-1 pl-3 pr-0">
+          <div class="form-group">
+            <label for="fname">Scheme Effective Date:</label>
+
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <input type="text" id="fname" name="fname" value="" class="form-control">
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+
+  </div>
+
+  <span class="task bar">&nbsp;Gold Details</span>
+  <div class="taskborder">
+
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr style="background-color: #bfc0ce;">
+          <th>Ornament</th>
+          <th>Count</th>
+          <th>Broken</th>
+          <th>Carat</th>
+          <th>Grosswt</th>
+          <th>Stonewt</th>
+          <th>Stone%</th>
+          <th>Netwt</th>
+          <th>PurityType</th>
+          <th>AmountPerGram</th>
+          <th>MaxAmount</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let field of fieldArray; let i = index">
+          <td>
+            <input [(ngModel)]="field.ornament" class="form-control" type="text" name="{{field.ornament}}" />
+          </td>
+          <td>
+            <input [(ngModel)]="field.count" class="form-control" type="text" name="{{field.count}}" />
+          </td>
+          <td>
+            <input [(ngModel)]="field.broken" class="form-control" type="text" name="{{field.broken}}" />
+          </td>
+          <td>
+            <input [(ngModel)]="field.carat" class="form-control" type="text" name="{{field.carat}}" />
+          </td>
+          <td>
+            <input [(ngModel)]="field.grosswt" class="form-control" type="text" name="{{field.grosswt}}" />
+          </td>
+          <td>
+            <input [(ngModel)]="field.stonewt" class="form-control" type="text" name="{{field.stonewt}}" />
+          </td>
+          <td>
+            <input [(ngModel)]="field.stoneperc" class="form-control" type="text" name="{{field.stoneperc}}" />
+          </td>
+          <td>
+            <input [(ngModel)]="field.netwt" class="form-control" type="text" name="{{field.netwt}" />
+        </td>
+        <td>
+          <input [(ngModel)]="field.puritytype" class="form-control" type="text" name="{{field.puritytype}}" />
+          </td>
+          <td>
+            <input [(ngModel)]="field.amountpergram" class="form-control" type="text" name="{{field.amountpergram}}" />
+          </td>
+          <td>
+            <input [(ngModel)]="field.maxamount" class="form-control" type="text" name="{{field.maxamount}}" />
+          </td>
+          <td>
+            <button class="btn btn-default" type="button" (click)="deleteFieldValue(i)">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input class="form-control" type="text" id="newAttributeCode" [(ngModel)]="golditemdetail.ornament"
+              name="newAttributeCode" />
+          </td>
+          <td>
+            <input class="form-control" type="text" id="newAttributeName" [(ngModel)]="golditemdetail.count"
+              name="newAttributeName" />
+          </td>
+          <td>
+            <input class="form-control" type="text" id="newAttributePrice" [(ngModel)]="golditemdetail.broken"
+              name="newAttributePrice" />
+          </td>
+          <td>
+            <input class="form-control" type="text" id="newAttributecarat" [(ngModel)]="golditemdetail.carat"
+              name="newAttributecarat" />
+          </td>
+          <td>
+            <input class="form-control" type="text" id="newAttributegrosswt" [(ngModel)]="golditemdetail.grosswt"
+              name="newAttributegrosswt" />
+          </td>
+          <td>
+            <input class="form-control" type="text" id="newAttributestonewt" [(ngModel)]="golditemdetail.stonewt"
+              name="newAttributestonewt" />
+          </td>
+          <td>
+            <input class="form-control" type="text" id="newAttributestoneperc" [(ngModel)]="golditemdetail.stoneperc"
+              name="newAttributestoneperc" />
+          </td>
+          <td>
+            <input class="form-control" type="text" id="newAttributenetwt" [(ngModel)]="golditemdetail.netwt"
+              name="newAttributenetwt" />
+          </td>
+          <td>
+            <input class="form-control" type="text" id="newAttributepuritytype" [(ngModel)]="golditemdetail.puritytype"
+              name="newAttributepuritytype" />
+          </td>
+          <td>
+            <input class="form-control" type="text" id="newAttributeamountpergram"
+              [(ngModel)]="golditemdetail.amountpergram" name="newAttributeamountpergram" />
+          </td>
+          <td>
+            <input class="form-control" type="text" id="newAttributemaxamount" [(ngModel)]="golditemdetail.maxamount"
+              name="newAttributemaxamount" />
+          </td>
+          <td>
+            <button class="btn btn-default" type="button" (click)="addFieldValue()">Add</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+
+  <span class="task bar">&nbsp;Loan Amount Details</span>
+  <div class="taskborder">
+    <br>
+    <div class="container-fluid">
+      <div class="row mt-2 mb-2">
+
+        <div class="col-sm-1 pl-3 pr-0">
+          <div class="form-group">
+            <label for="maxloanamount">Max Loan Amount:</label>
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <input type="text" id="maxloanamount" name="maxloanamount" class="form-control">
+          </div>
+        </div>
+
+        <div class="col-sm-1 pl-3 pr-0">
+          <div class="form-group">
+            <label for="cssname">Gold Loan Amount:</label>
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <input type="text" id="goldloanamount" name="goldloanamount" value="" class="form-control">
+          </div>
+        </div>
+
+        <div class="col-sm-1 pl-3 pr-0">
+          <div class="form-group">
+            <label for="excessamount">Excess Amount:</label>
+          </div>
+        </div>
+
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <input type="text" id="excessamount" name="excessamount" value="" class="form-control">
+          </div>
+        </div>
+
+        <div class="col-sm-1 pl-3 pr-0">
+          <div class="form-group">
+            <label for="remarks">Remarks:</label>
+          </div>
+        </div>
+
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <textarea type="text" id="remarks" name="remarks" value="" class="form-control"></textarea>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <div class="container-fluid">
+      <div class="row mt-2 mb-2">
+
+        <div class="col-sm-1 pl-3 pr-0">
+          <div class="form-group">
+            <label for="pronoteamount">Pro-note Amount:</label>
+
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <input type="text" id="pronoteamount" name="pronoteamount" value="" class="form-control">
+          </div>
+        </div>
+
+        <div class="col-sm-1 pl-3 pr-0">
+          <div class="form-group">
+            <label for="totalloanamt">Total Loan Amount:</label>
+
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <input type="text" id="totalloanamt" name="totalloanamt" value="" class="form-control">
+          </div>
+        </div>
+
+        <div class="col-sm-1 pl-3 pr-0">
+          <div class="form-group">
+            <label for="servicecharge">Service charge Paid:</label>
+
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <input type="text" id="servicecharge" name="servicecharge" value="" class="form-control">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+
+  <span class="task bar">&nbsp;Take Photo</span>
+  <div class="taskborder">
+    <br>
+    <div class="container-fluid">
+      <div class="row mt-2 mb-2">
+
+        <div class="col-sm-1 pl-3 pr-0">
+          <div class="form-group">
+            <label for="maxloanamount">Gold Photo:</label>
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <input type="file" name="file" id="file" (change)="onFileChanged($event)" />
+         
+        
+         
+          </div>
+        </div>
+
+        <div class="col-sm-1 pl-3 pr-0">
+          <div class="form-group">
+            <label for="cssname">Gold Photo Status:</label>
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <input type="text" id="goldloanamount" name="goldloanamount" value="" class="form-control">
+          </div>
+        </div>
+               
+      </div>
+    </div>
+    
+  </div>
+
+  <span class="task bar">&nbsp;Payment Details</span>
+  <div class="taskborder">
+    <br>
+    <div class="container-fluid">
+      <div class="row mt-2 mb-2">
+
+        <div class="col-sm0 pl-3 pr-0">
+          <div class="form-group">
+            <label for="maxloanamount">Payment Mode:</label>
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="form-group">
+            <input type="radio" id="cash" name="cash" value="cash" style="margin-right:5px;">
+            <label for="cash" style="margin-right:5px;">Cash</label>
+          </div>
+        </div>
+               
+      </div>
+    </div>
+    
+    <div id="siteInfo" style="text-align:center" >
+      <button type="button" class="btn btn-primary" style="background-color: #dc3545;">Cancel Loan</button> &nbsp;&nbsp;
+      <button type="button" class="btn btn-primary" style="background-color:#28a745;">Create Loan</button>
+    </div>
+<br>
+  </div>
+
+  
+  
+  
+  <span class="task bar">'</span>
+ 
+  <div class="content" role="main">
+
+  </div>
+</form>
+
+<div class="overlay" *ngIf="popup">
+  <div class="popup">
+    <label for="lblcreatecustomer" class="taskpopup barpopup">Create Customer</label>
+
+    <a class="close" (click)="popup = false">&times;</a>
+
+    <br>
+    <form (ngSubmit)="savecustomerDetails(customerdetailForm.value)" #customerdetailForm="ngForm" name="myForm">
+      <div class="container-fluid">
+        <div class="row mt">
+
+          <div class="col-sm-2 p-0">
+            <div class="form-group">
+              <label for="lblcustomercodepopup">Customer Code:</label>
+            </div>
+          </div>
+
+          <div class="col-sm-4 pl-3 pr-0">
+            <div class="form-group">
+              <input type="number" class="form-control" id="customercodepopup"
+                [(ngModel)]="custdetail.customercodepopup" name="customercodepopup">
+            </div>
+          </div>
+          <!-- <div > -->
+          <div class="col-sm-2 pl-2">
+            <div class="form-group">
+              <label for="firstname" class="control-label">First Name*:</label>
+
+            </div>
+          </div>
+
+          <div class="col-sm-4 pl-3 pr-0">
+            <div class="form-group" [class.has-error]="firstnamecontrol.invalid && firstnamecontrol.touched"
+              [class.has-success]="firstnamecontrol.valid">
+              <input class="form-control mb-0" required id="firstname" name="firstname" #firstnamecontrol="ngModel"
+                [(ngModel)]="custdetail.firstname">
+
+              <span class="help-block" style="color:red" *ngIf="firstnamecontrol.invalid && firstnamecontrol.touched ">
+                First Name is Mandatory
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- </div> -->
+
+
+
+      <div class="container-fluid">
+        <div class="row mt">
+
+          <div class="col-sm-2 p-0">
+            <div class="form-group">
+              <label for="lbllastname">Last Name*:</label>
+
+            </div>
+          </div>
+
+          <div class="col-sm-4 pl-3 pr-0">
+            <div class="form-group" [class.has-error]="lastnamecontrol.invalid && lastnamecontrol.touched"
+              [class.has-success]="lastnamecontrol.valid">
+              <input class="form-control mb-0" type="text" required id="lastname" name="lastname"
+                #lastnamecontrol="ngModel" [(ngModel)]="custdetail.lastname">
+              <span style="color:red" *ngIf="lastnamecontrol.invalid && lastnamecontrol.touched ">
+                Last Name is Mandatory
+              </span>
+            </div>
+          </div>
+
+          <div class="col-sm-2 pl-2">
+            <div class="form-group">
+              <label for="lbllocality">Locality*:</label>
+
+            </div>
+          </div>
+
+          <div class="col-sm-4 pl-3 pr-0">
+            <div class="form-group" [class.has-error]="localitycontrol.invalid && localitycontrol.touched"
+              [class.has-success]="lastnamecontrol.valid">
+              <input class="form-control mb-0" type="text" required id="locality" name="locality"
+                #localitycontrol="ngModel" [(ngModel)]="custdetail.locality">
+              <span style="color:red" *ngIf="localitycontrol.invalid && localitycontrol.touched ">
+                Locality is Mandatory
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row mt">
+
+          <div class="col-sm-2 p-0">
+            <div class="form-group">
+              <label for="lbladdress1">Address1*:</label>
+
+            </div>
+          </div>
+
+          <div class="col-sm-4 pl-3 pr-0">
+            <div class="form-group" [class.has-error]="address1control.invalid && address1control.touched"
+              [class.has-success]="address1control.valid">
+              <textarea class="form-control mb-0" type="text" required id="address1" name="address1"
+                #address1control="ngModel" [(ngModel)]="custdetail.address1"></textarea>
+              <span style="color:red" *ngIf="address1control.invalid && address1control.touched ">
+                Address1 is Mandatory
+              </span>
+            </div>
+          </div>
+
+          <div class="col-sm-2 pl-2">
+            <div class="form-group">
+              <label for="lbladdress2">Address2:</label>
+
+            </div>
+          </div>
+
+          <div class="col-sm-4 pl-3 pr-0">
+            <div class="form-group">
+              <textarea class="form-control mb-0" style="width: 100%;" type="text" id="address2" name="address2"
+                #address2="ngModel" [(ngModel)]="custdetail.address2"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="container-fluid">
+        <div class="row mt">
+
+          <div class="col-sm-2 p-0">
+            <div class="form-group">
+              <label for="lblcity">City:</label>
+
+            </div>
+          </div>
+
+          <div class="col-sm-4 pl-3 pr-0">
+            <div class="form-group">
+              <select class="form-control mb-0" id="city" name="city">
+                <option [value]="-1">Select City</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-sm-2 pl-2">
+            <div class="form-group">
+              <label for="lbldistrict">District:</label>
+
+            </div>
+          </div>
+
+          <div class="col-sm-4 pl-3 pr-0">
+            <div class="form-group">
+              <input class="form-control mb-0" type="text" id="district" name="district" #district="ngModel"
+                [(ngModel)]="custdetail.district">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row mt">
+
+
+          <div class="col-sm-2 p-0">
+            <div class="form-group">
+              <label for="lblstate">State</label>
+
+            </div>
+          </div>
+
+          <div class="col-sm-4 pl-3 pr-0">
+            <div class="form-group">
+              <input class="form-control mb-0" type="text" id="state" name="state" #state="ngModel"
+                [(ngModel)]="custdetail.state">
+            </div>
+          </div>
+
+          <div class="col-sm-2 pl-2">
+            <div class="form-group">
+              <label for="lblpin">Pin* :</label>
+
+            </div>
+          </div>
+
+          <div class="col-sm-4 pl-3 pr-0">
+            <div class="form-group" [class.has-error]="pincontrol.invalid && pincontrol.touched"
+              [class.has-success]="pincontrol.valid">
+              <input class="form-control mb-0" type="number" required id="pin" name="pin" #pincontrol="ngModel"
+                [(ngModel)]="custdetail.pin">
+              <span style="color:red" *ngIf="pincontrol.invalid && pincontrol.touched ">
+                Pin Code is Mandatory
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row mt">
+
+          <div class="col-sm-2 p-0">
+            <div class="form-group">
+              <label for="lbldateofbirth">Date of Birth:</label>
+
+            </div>
+          </div>
+
+          <div class="col-sm-4 pl-3 pr-0">
+            <div class="form-group">
+              <input type="date" class="form-control mb-0" id="dateofbirth" name="dateofbirth" #dateofbirth="ngModel"
+                [(ngModel)]="custdetail.dateofbirth">
+            </div>
+          </div>
+
+          <div class="col-sm-2 pl-2">
+            <div class="form-group">
+              <label for="lblgender">Gender*:</label>
+
+            </div>
+          </div>
+
+          <div class="col-sm-4 pl-3 pr-0">
+            <div class="form-group">
+              <input type="radio" required id="gender" #gendercontrol="ngModel" name="gender" value="Male"
+                [(ngModel)]="custdetail.gender">
+              <label for="male">Male</label>
+
+              <input type="radio" required id="gender" #gendercontrol="ngModel" name="gender" value="Female"
+                [(ngModel)]="custdetail.gender">
+              <label for="female">Female</label>
+              <span style="color:red" *ngIf="gendercontrol.invalid && gendercontrol.touched ">
+                Gender is Mandatory
+              </span>
+            </div>
+          </div>
+        </div>
+        <!-- <button type="submit" class="btn btn-primary" style="background-color: #e43519;"
+          [disabled]="customerdetailForm.invalid">Save</button> -->
+      </div>
+
+      <div class="container-fluid">
+        <div class="row mt">
+
+          <div class="col-sm-2 p-0">
+            <div class="form-group">
+              <label for="lblmobilenumber">MobileNumber*:</label>
+
+            </div>
+          </div>
+
+          <div class="col-sm-4 pl-3 pr-0">
+            <div class="form-group" [class.has-error]="mobilenumbercontrol.invalid && mobilenumbercontrol.touched"
+              [class.has-success]="mobilenumbercontrol.valid">
+              <input class="form-control mb-0" maxlength="10" [pattern]="mobNumberPattern" type="text" required
+                id="mobilenumber" name="mobilenumber" [(ngModel)]="custdetail.mobilenumber"
+                #mobilenumbercontrol="ngModel">
+              <!-- <span style="color:red"  *ngIf="mobilenumbercontrol.invalid && mobilenumbercontrol.touched ">
+                            Mobile Number is Mandatory
+                          </span> -->
+              <span class="help-block" style="color:red" *ngIf="mobilenumbercontrol.errors?.pattern">
+                Mobile Number is Invalid
+              </span>
+
+            </div>
+          </div>
+
+          <div class="col-sm-2 pl-2">
+            <div class="form-group">
+              <label for="lblverificationnumber">Verify No:</label>
+
+            </div>
+          </div>
+
+          <div class="col-sm-4 pl-3 pr-0">
+            <div class="form-group">
+              <input class="form-group mb-0" style="width: 64%;" type="text" id="verificationnumber"
+                name="verificationnumberder" value="">
+              <button type="button">Validate</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row mt">
+
+          <div class="col-sm-2 p-0">
+            <div class="form-group">
+              <button style="margin-left:115%" type="button">VerifyMobNo</button>
+
+            </div>
+          </div>
+
+          <div class="col-sm-4 pl-3 pr-0">
+            <div class="form-group">
+              <button style="margin-left:54%" type="button">?</button>
+            </div>
+          </div>
+
+          <div class="col-sm-2 pl-2">
+            <div class="form-group">
+              <label for="lbllandlinenumber">LandlineNumber:</label>
+
+            </div>
+          </div>
+
+          <div class="col-sm-4 pl-3 pr-0">
+            <div class="form-group">
+              <input class="form-control mb-0" type="number" id="landlinenumber" name="landlinenumber"
+                #landlinenumber="ngModel" [(ngModel)]="custdetail.landlinenumber">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row mt">
+
+          <div class="col-sm-2 p-0">
+            <div class="form-group">
+              <label for="lblemail">Email:</label>
+
+            </div>
+          </div>
+
+          <div class="col-sm-4 pl-3 pr-0">
+            <div class="form-group">
+              <input class="form-control mb-0" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" type="text"
+                id="email" name="email" #emailcontrol="ngModel" [(ngModel)]="custdetail.email">
+              <span class="help-block" style="color:red" *ngIf="emailcontrol.errors?.pattern">
+                Email is Invalid
+              </span>
+            </div>
+          </div>
+
+          <div class="col-sm-2 pl-2">
+            <div class="form-group">
+              <label for="lblidprooftype">IdProofType:</label>
+
+            </div>
+          </div>
+
+          <div class="col-sm-4 pl-3 pr-0">
+            <div class="form-group">
+              <select class="form-control mb-0" id="idprooftype" name="idprooftype">
+                <option [value]="-1">Select Type</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row mt">
+
+          <div class="col-sm-2 p-0">
+            <div class="form-group">
+              <label for="lblidproofnumber">IdProofNo:</label>
+
+            </div>
+          </div>
+
+          <div class="col-sm-4 pl-3 pr-0">
+            <div class="form-group">
+              <input class="form-control mb-0" type="text" id="idproofnumber" name="idproofnumber"
+                [(ngModel)]="custdetail.idproofnumber" #idproofnumber="ngModel">
+            </div>
+          </div>
+
+          <div class="col-sm-2 pl-2">
+            <div class="form-group">
+              <label for="lblidproofscan">IdProofscan:</label>
+
+            </div>
+          </div>
+
+          <div class="col-sm4 pl-3 pr-0">
+            <div class="form-group">
+            
+              <input type="file" name="file" id="file" (change)="onFileChanged($event)" />
+              
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row mt">
+
+          <div class="col-sm-2 p-0">
+            <div class="form-group">
+              <label for="lblphoto">Photo:</label>
+
+            </div>
+          </div>
+
+          <div class="col-sm-4 pl-3 pr-0">
+            <div class="form-group">
+              <!-- <button type="button">Take Photo</button> -->
+              <input #imageInput type="file"  accept="image/*"  > 
+              <!-- (change)="processFile(imageInput)" -->
+            </div>
+          </div>
+
+          <div class="col-sm-2 pl-2">
+            <div class="form-group">
+              <label for="lblphoto">Photo Status:</label>
+
+            </div>
+          </div>
+
+          <div class="col-sm-4 pl-3 pr-0">
+            <div class="form-group">
+              <button type="button">Not Uploaded</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="siteInfo" style="text-align:center">
+
+         <button type="submit" class="btn btn-primary" style="background-color: #e43519;"
+          [disabled]="customerdetailForm.invalid">Save</button>
+        &nbsp;&nbsp;
+        <button type="button" class="btn btn-primary" style="background-color: #e43519;">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+</div>
+<router-outlet></router-outlet>
