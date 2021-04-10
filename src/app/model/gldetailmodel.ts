@@ -1,0 +1,43 @@
+export class gldetailmodel{
+    glnumber: number;
+    currentgoldrate: number;
+    customerCode: number;
+    customerName: string;
+    pawnticketno: number;
+    mobile: number;
+    email:string;
+    addressOne:string;
+    branchid:string;
+    companyid:string;
+    schemenameid:string;
+    ratePerGram:number;
+    riskCategory:string;
+    effectiveTo:Date;
+    goldloanamount:number;
+    maximumamount:number;
+    excessamount:number;
+    totalloanamount:number;
+    servicecharge:number;
+    loantype:string;
+    totalgrosswt:number;
+    totalnetwt:number;
+    paymentmode:string;
+    remarks:string;
+    customerid:string;
+    fieldarray:string[];
+    photoUrl:string;
+    interestPercentage:number;
+    interestPercentage2:number;
+    interestPercentage3:number;
+    interestPercentage4:number;
+    fromMonth:number;
+    fromMonth2:number;
+    fromMonth3:number;
+    fromMonth4:number;
+    toMonth:number;
+    toMonth2:number;
+    toMonth3:number;
+    toMonth4:number;
+    financialYearId:string;
+   
+   }
